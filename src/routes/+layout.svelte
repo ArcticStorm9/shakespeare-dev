@@ -1,18 +1,29 @@
 <script lang="ts">
     import "../app.css";
 </script>
-  <nav class="flex justify-center bg-slate-700">
-    <a href="/" class="w-32 h-16">
+
+<nav class="flex justify-center bg-neutral-800 text-white z-20">
+<a href="/" class="w-32 h-16 grid justify-center content-center uppercase hover:bg-neutral-600">
+    <span>
         Home
-    </a>
-    <a href="/blog" class="w-32 h-16">
+    </span>
+</a>
+<a href="/blog" class="w-32 h-16 grid justify-center content-center uppercase hover:bg-neutral-600">
+    <span>
         Blog
-    </a>
-    <a href="/" class="w-32 h-16">
+    </span>
+</a>
+<a href="/" class="w-32 h-16 grid justify-center content-center uppercase hover:bg-neutral-600">
+    <span>
         Contact
-    </a>
-    <a href="/" class="w-32 h-16">
+    </span>
+</a>
+<a href="/" class="w-32 h-16 grid justify-center content-center uppercase hover:bg-neutral-600">
+    <span>
         About
-    </a>
-  </nav>
+    </span>
+</a>
+</nav>
+<div class="w-full h-full bg-neutral-900 text-white font-rubik -z-20">
 <slot />
+</div>
