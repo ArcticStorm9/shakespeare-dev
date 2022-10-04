@@ -1,6 +1,10 @@
 <script lang="ts">
     import { onMount } from 'svelte';
 
+    export let width: number | 'full';
+    export let height: number | 'full';
+    export let top: string;
+
     enum Shape {
         Circle,
         Square,
@@ -21,7 +25,7 @@
         const maxRadius = 150;
         const minRadius = 75;
         const maxSpeed = 4;
-        const possibleColors = ['#737373', '#525252', '#404040']
+        const possibleColors = ['#404040', '#333333', '#262626']
         return {
             shape: s,
             color: possibleColors[Math.floor(Math.random() * possibleColors.length)],
@@ -36,8 +40,16 @@
     const initCanvas = (): HTMLCanvasElement => {
         const canvas = document.querySelector('canvas')!;
         const resizeCanvas = (): void => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            if (width == 'full') {
+                canvas.width = window.innerWidth;
+            } else {
+                canvas.width = width;
+            }
+            if (height == 'full') {
+                canvas.height = window.innerHeight;
+            } else {
+                canvas.height = height;
+            }
         }
         window.addEventListener('resize', resizeCanvas, false);
         resizeCanvas();
@@ -111,4 +123,4 @@
     });
 </script>
 
-<canvas class="w-full h-full absolute top-16" />
+<canvas class="w-full absolute {top}" />
