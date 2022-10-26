@@ -21,6 +21,18 @@
         dy: number;
     }
 
+    const increaseColor = (color: string): string => {
+        color = color.slice(1);
+        let r = color.slice(0, 2);
+        let g = color.slice(2, 4);
+        let b = color.slice(4, 6);
+        return ['#',
+            (parseInt(r)+10 > 255 ? 255 : parseInt(r) + 10).toString(16),
+            (parseInt(g)+10 > 255 ? 255 : parseInt(g) + 10).toString(16),
+            (parseInt(b)+10 > 255 ? 255 : parseInt(b) + 10).toString(16)
+        ].join()
+    }
+
     const generateParticle = (s: Shape, c: HTMLCanvasElement): Particle => {
         const maxRadius = 150;
         const minRadius = 75;
@@ -84,6 +96,10 @@
         // Draw Particle
         switch (p.shape) {
             case Shape.Circle:
+                context.beginPath();
+                context.arc(newX, newY, p.radius, 0, 2 * Math.PI, false);
+                context.fillStyle = p.color;
+                context.fill();
                 break;
             case Shape.Square:
                 break;
@@ -103,7 +119,7 @@
 
     onMount(() => {
         const canvas: HTMLCanvasElement = initCanvas();
-        const ps = initParticles(10, Shape.Hexagon, canvas);
+        const ps = initParticles(10, Shape.Circle, canvas);
         const targetFrameRate = 30;
         let timeOfLastFrame = Date.now();
 
@@ -123,4 +139,6 @@
     });
 </script>
 
-<canvas class="w-full absolute {top}" />
+<canvas
+    class="w-full absolute {top}"
+/>

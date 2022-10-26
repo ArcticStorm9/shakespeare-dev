@@ -18,7 +18,7 @@
     ]
 </script>
 
-<section class="grid gap-5 h-[40rem] justify-center content-center">
+<section class="grid gap-5 h-[40rem] justify-center content-center cursor-default">
     <Particles width={'full'} height={640} top={'top-16'} />
     <h1 class="text-8xl font-silkscreen text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-400 z-10">
         Ian Shakespeare
