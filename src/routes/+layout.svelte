@@ -2,7 +2,7 @@
     import "../app.css";
 </script>
 
-<nav class="flex justify-center bg-neutral-800 text-white z-20">
+<nav class="flex sticky top-0 justify-center bg-neutral-800 text-white z-20">
 <a
     href="/"
     class="w-48 h-16 grid justify-center content-center text-xl font-semibold hover:bg-neutral-700 hover:font-bold hover:text-sky-400 ease-in-out duration-100"

@@ -3,7 +3,7 @@
 
     export let width: number | 'full';
     export let height: number | 'full';
-    export let top: string;
+    export let shapeOfParticles: 'circle' | 'square' | 'hexagon';
 
     enum Shape {
         Circle,
@@ -33,9 +33,7 @@
         ].join()
     }
 
-    const generateParticle = (s: Shape, c: HTMLCanvasElement): Particle => {
-        const maxRadius = 150;
-        const minRadius = 75;
+    const generateParticle = (s: Shape, c: HTMLCanvasElement, minRadius: number, maxRadius: number): Particle => {
         const maxSpeed = 4;
         const possibleColors = ['#404040', '#333333', '#262626']
         return {
@@ -68,11 +66,21 @@
         return canvas;
     }
 
-    const initParticles = (n: number, s: Shape, c: HTMLCanvasElement): Particle[] => {
+    const initParticles = (n: number, c: HTMLCanvasElement, minRadius: number, maxRadius: number): Particle[] => {
         let p: Particle[] = [];
         const r = 50;
         for (let i = 0; i < n; i++) {
-            p.push(generateParticle(s, c));
+            switch (shapeOfParticles) {
+                case 'circle':
+                    p.push(generateParticle(Shape.Circle, c, minRadius, maxRadius));
+                    break;
+                case 'square':
+                    p.push(generateParticle(Shape.Square, c, minRadius, maxRadius));
+                    break;
+                case 'hexagon':
+                    p.push(generateParticle(Shape.Hexagon, c, minRadius, maxRadius));
+                    break;
+            }
         }
         return p;
     }
@@ -117,9 +125,12 @@
         }
     }
 
+    var frameTime: number;
+    var frameRate: number;
+
     onMount(() => {
         const canvas: HTMLCanvasElement = initCanvas();
-        const ps = initParticles(10, Shape.Circle, canvas);
+        const ps = initParticles(100, canvas, 10, 50);
         const targetFrameRate = 30;
         let timeOfLastFrame = Date.now();
 
@@ -130,6 +141,8 @@
             let now: number = Date.now();
             let timeElapsed = now - timeOfLastFrame;
             if (timeElapsed > 1000 / targetFrameRate) {
+                frameTime = timeElapsed;
+                frameRate = 1000 / frameTime;
                 timeOfLastFrame = now - (timeElapsed % 1000 / targetFrameRate);
                 canvas.getContext("2d")!.clearRect(0, 0, canvas.width, canvas.height);
                 ps.map((p) => tickParticle(canvas, p));
@@ -140,5 +153,8 @@
 </script>
 
 <canvas
-    class="w-full absolute {top}"
+    class="w-full absolute"
 />
+<span class="font-consolas absolute">
+    Frame Time: {frameTime.toFixed(3)}ms | Frame Rate: {frameRate.toFixed(3)}
+</span>

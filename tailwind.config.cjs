@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         'rubik': ['Rubik', 'sans-serif'],
         'silkscreen': ['Silkscreen', 'sans-serif'],
+        'consolas': ['consolas', 'serif'],
       },
     },
   },
