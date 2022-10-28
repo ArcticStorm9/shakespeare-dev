@@ -144,7 +144,7 @@
 </script>
 
 <canvas class="w-full absolute"/>
-<div class="flex justify-between px-4 absolute bottom-0 w-full font-consolas bg-[rgb(20,20,20)]">
+<div class="flex justify-between px-4 absolute bottom-0 w-full h-12 font-consolas bg-gradient-to-t from-neutral-900">
     <span class="text-zinc-700">
         Frame Time: {frameTime.toFixed(3)}ms | Frame Rate: {frameRate.toFixed(3)}
     </span>
