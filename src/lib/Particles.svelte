@@ -3,7 +3,10 @@
 
     export let width: number | 'full';
     export let height: number | 'full';
+    export let numOfParticles: number;
     export let shapeOfParticles: 'circle' | 'square' | 'hexagon';
+    export let minRadius: number;
+    export let maxRadius: number;
 
     enum Shape {
         Circle,
@@ -19,18 +22,6 @@
         y: number;
         dx: number;
         dy: number;
-    }
-
-    const increaseColor = (color: string): string => {
-        color = color.slice(1);
-        let r = color.slice(0, 2);
-        let g = color.slice(2, 4);
-        let b = color.slice(4, 6);
-        return ['#',
-            (parseInt(r)+10 > 255 ? 255 : parseInt(r) + 10).toString(16),
-            (parseInt(g)+10 > 255 ? 255 : parseInt(g) + 10).toString(16),
-            (parseInt(b)+10 > 255 ? 255 : parseInt(b) + 10).toString(16)
-        ].join()
     }
 
     const generateParticle = (s: Shape, c: HTMLCanvasElement, minRadius: number, maxRadius: number): Particle => {
@@ -66,11 +57,11 @@
         return canvas;
     }
 
-    const initParticles = (n: number, c: HTMLCanvasElement, minRadius: number, maxRadius: number): Particle[] => {
+    const initParticles = (n: number, c: HTMLCanvasElement, s: string, minRadius: number, maxRadius: number): Particle[] => {
         let p: Particle[] = [];
         const r = 50;
         for (let i = 0; i < n; i++) {
-            switch (shapeOfParticles) {
+            switch (s) {
                 case 'circle':
                     p.push(generateParticle(Shape.Circle, c, minRadius, maxRadius));
                     break;
@@ -125,12 +116,12 @@
         }
     }
 
-    var frameTime: number;
-    var frameRate: number;
+    var frameTime: number = 0;
+    var frameRate: number = 0;
 
     onMount(() => {
         const canvas: HTMLCanvasElement = initCanvas();
-        const ps = initParticles(100, canvas, 10, 50);
+        const ps = initParticles(numOfParticles, canvas, shapeOfParticles, minRadius, maxRadius);
         const targetFrameRate = 30;
         let timeOfLastFrame = Date.now();
 
@@ -152,9 +143,15 @@
     });
 </script>
 
-<canvas
-    class="w-full absolute"
-/>
-<span class="font-consolas absolute">
-    Frame Time: {frameTime.toFixed(3)}ms | Frame Rate: {frameRate.toFixed(3)}
-</span>
+<canvas class="w-full absolute"/>
+<div class="flex justify-between px-4 absolute bottom-0 w-full font-consolas bg-[rgb(20,20,20)]">
+    <span class="text-zinc-700">
+        Frame Time: {frameTime.toFixed(3)}ms | Frame Rate: {frameRate.toFixed(3)}
+    </span>
+    <a
+        class="text-neutral-500"
+        target="_blank"
+        href="https://github.com/ArcticStorm9/shakespeare-dev">
+        Particle Source &#62;
+    </a>
+</div>

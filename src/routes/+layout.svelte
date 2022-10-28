@@ -2,10 +2,10 @@
     import "../app.css";
 </script>
 
-<nav class="flex sticky top-0 justify-center bg-neutral-800 text-white z-20">
+<nav class="flex justify-center w-full absolute top-0 bg-gradient-to-b from-neutral-900 text-white z-20">
 <a
     href="/"
-    class="w-48 h-16 grid justify-center content-center text-xl font-semibold hover:bg-neutral-700 hover:font-bold hover:text-sky-400 ease-in-out duration-100"
+    class="w-48 h-16 grid justify-center content-center text-xl hover:text-2xl font-semibold hover:bg-gradient-to-b hover:from-neutral-800 hover:font-bold hover:text-blue-500 duration-500"
 >
     <span>
         Home
@@ -13,7 +13,7 @@
 </a>
 <a
     href="/blog"
-    class="w-48 h-16 grid justify-center content-center text-xl font-semibold hover:bg-neutral-700 hover:font-bold hover:text-sky-400 ease-in-out duration-100"
+    class="w-48 h-16 grid justify-center content-center text-xl hover:text-2xl font-semibold hover:bg-gradient-to-b hover:from-neutral-800 hover:font-bold hover:text-sky-500 duration-500"
 >
     <span>
         Blog
@@ -21,7 +21,7 @@
 </a>
 <a
     href="/"
-    class="w-48 h-16 grid justify-center content-center text-xl font-semibold hover:bg-neutral-700 hover:fontbold hover:text-sky-400 ease-in-out duration-100"
+    class="w-48 h-16 grid justify-center content-center text-xl hover:text-2xl font-semibold hover:bg-gradient-to-b hover:from-neutral-800 hover:font-bold hover:text-sky-500 duration-500"
 >
     <span>
         Contact
@@ -29,13 +29,13 @@
 </a>
 <a
     href="/"
-    class="w-48 h-16 grid justify-center content-center text-xl font-semibold hover:bg-neutral-700 hover:font-bold hover:text-sky-400 ease-in-out duration-100"
+    class="w-48 h-16 grid justify-center content-center text-xl hover:text-2xl font-semibold hover:bg-gradient-to-b hover:from-neutral-800 hover:font-bold hover:text-sky-400 duration-500"
 >
     <span>
         About
     </span>
 </a>
 </nav>
-<div class="w-full h-full bg-neutral-900 text-white font-rubik -z-20">
+<div class="w-full bg-neutral-900 text-white font-rubik -z-20">
 <slot />
 </div>
