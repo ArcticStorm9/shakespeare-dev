@@ -7,6 +7,7 @@ module.exports = {
         'rubik': ['Rubik', 'sans-serif'],
         'silkscreen': ['Silkscreen', 'sans-serif'],
         'consolas': ['consolas', 'serif'],
+        'righteous': ['Righteous', 'serif'],
       },
     },
   },
