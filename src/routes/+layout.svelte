@@ -20,7 +20,7 @@
         </span>
     </a>
     <a
-        href="/"
+        href="/contact"
         class="w-48 h-16 grid justify-center content-center hover:text-2xl hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-sky-500 duration-100"
     >
         <span>
@@ -28,7 +28,7 @@
         </span>
     </a>
     <a
-        href="/"
+        href="/about"
         class="w-48 h-16 grid justify-center content-center hover:text-2xl hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-sky-400 duration-100"
     >
         <span>
@@ -36,6 +36,6 @@
         </span>
     </a>
 </nav>
-<div class="w-full bg-gray-900 text-white font-rubik -z-20">
+<div class="w-full bg-gray-900 text-white font-rubik">
 <slot />
 </div>

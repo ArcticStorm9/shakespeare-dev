@@ -5,8 +5,10 @@
     export let height: number | 'full';
     export let numOfParticles: number;
     export let shapeOfParticles: 'circle' | 'square' | 'hexagon';
+    export let colors: string[];
     export let minRadius: number;
     export let maxRadius: number;
+    export let maxSpeed: number;
 
     enum Shape {
         Circle,
@@ -24,9 +26,7 @@
         dy: number;
     }
 
-    const generateParticle = (s: Shape, c: HTMLCanvasElement, minRadius: number, maxRadius: number): Particle => {
-        const maxSpeed = 2.5;
-        const possibleColors = ['#4b5563', '#374151', '#1f2937']
+    const generateParticle = (s: Shape, c: HTMLCanvasElement, possibleColors: string[], minRadius: number, maxRadius: number, maxSpeed: number): Particle => {
         return {
             shape: s,
             color: possibleColors[Math.floor(Math.random() * possibleColors.length)],
@@ -57,19 +57,19 @@
         return canvas;
     }
 
-    const initParticles = (n: number, c: HTMLCanvasElement, s: string, minRadius: number, maxRadius: number): Particle[] => {
+    const initParticles = (n: number, c: HTMLCanvasElement, s: string): Particle[] => {
         let p: Particle[] = [];
         const r = 50;
         for (let i = 0; i < n; i++) {
             switch (s) {
                 case 'circle':
-                    p.push(generateParticle(Shape.Circle, c, minRadius, maxRadius));
+                    p.push(generateParticle(Shape.Circle, c, colors, minRadius, maxRadius, maxSpeed));
                     break;
                 case 'square':
-                    p.push(generateParticle(Shape.Square, c, minRadius, maxRadius));
+                    p.push(generateParticle(Shape.Circle, c, colors, minRadius, maxRadius, maxSpeed));
                     break;
                 case 'hexagon':
-                    p.push(generateParticle(Shape.Hexagon, c, minRadius, maxRadius));
+                    p.push(generateParticle(Shape.Circle, c, colors, minRadius, maxRadius, maxSpeed));
                     break;
             }
         }
@@ -122,7 +122,7 @@
 
     onMount(() => {
         const canvas: HTMLCanvasElement = initCanvas();
-        const ps = initParticles(numOfParticles, canvas, shapeOfParticles, minRadius, maxRadius);
+        const ps = initParticles(numOfParticles, canvas, shapeOfParticles);
         const targetFrameRate = 30;
         let timeOfLastFrame = Date.now();
 
