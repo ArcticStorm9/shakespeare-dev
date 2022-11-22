@@ -5,7 +5,7 @@
 <nav class="flex justify-center w-full absolute top-0 text-xl font-semibold bg-gradient-to-b from-gray-900 text-white z-20">
     <a
         href="/"
-        class="w-48 h-16 grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-blue-500"
+        class="w-48 h-16 font-rubik text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-600"
     >
         <span>
             Home
@@ -13,7 +13,7 @@
     </a>
     <a
         href="/blog"
-        class="w-48 h-16 grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-sky-500"
+        class="w-48 h-16 font-rubik text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-600"
     >
         <span>
             Blog
@@ -21,7 +21,7 @@
     </a>
     <a
         href="/contact"
-        class="w-48 h-16 grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-sky-500"
+        class="w-48 h-16 font-rubik text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-600"
     >
         <span>
             Contact
@@ -29,7 +29,7 @@
     </a>
     <a
         href="/about"
-        class="w-48 h-16 grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-sky-400"
+        class="w-48 h-16 font-rubik text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-600"
     >
         <span>
             About

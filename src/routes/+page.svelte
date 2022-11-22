@@ -19,8 +19,8 @@
         const rect = target!.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
-        target.style.setProperty("--mouse-x", `${x}px`);
-        target.style.setProperty("--mouse-y", `${y}px`);
+        target.style.setProperty('--mouse-x', `${x}px`);
+        target.style.setProperty('--mouse-y', `${y}px`);
     }
 
     const randomNumber = Math.floor(Math.random() * 100);
@@ -35,18 +35,20 @@
                 "Associate in General Studies",
                 "Honor Roll Student",
             ],
-            desc: "paragraph should go here"
+            desc: "As a graduate from Utah Tech University, I have hands on experience building all sorts of apps. From simple Python games to C-written file systems, I've worked on dozens of projects during my time in school."
         },
         {
             icon: "fa-solid fa-code",
-            title: "Languages",
+            title: "Technologies",
             points: [
-                "point 1",
-                "point 2",
-                "point 3",
-                "point 4",
+                "TypeScript",
+                "JavaScript",
+                "Python",
+                "C/C++",
+                "Swift",
+                "Golang"
             ],
-            desc: "there is in fact a cat"
+            desc: ""
         },
         {
             icon: "fa-solid fa-briefcase",
@@ -86,20 +88,25 @@
         maxSpeed={2.5}
     />
 </div>
-<div class="mx-40">
-    <div class="grid grid-cols-3 items-center gap-8 w-full h-full py-8">
+<div class="mx-30">
+    <div class="flex flex-wrap justify-center gap-8 w-full h-full py-8 text-gray-100">
         {#each infoCards as infoCard}
-            <section class="grid p-8 gap-8 radial-hover text-center rounded-lg border-2 border-gray-800 hover:shadow-lg" on:mousemove={handleMouseMove}>
-                <i class={`${infoCard.icon} fa-4x`}></i>
-                <h1 class="font-bold">
+            <section
+                class="grid basis-80 p-8 gap-4 radial-hover text-center rounded-lg border-2 border-gray-800 hover:shadow-lg duration-300"
+                on:mousemove={handleMouseMove}
+            >
+                <i class={`${infoCard.icon} fa-4x text-rose-600`}></i>
+                <h1 class="font-bold text-2xl">
                     {infoCard.title}
                 </h1>
-                <ul class="text-left list-disc">
+                <hr class="border-gray-700" />
+                <ul class="text-left list-disc pl-4">
                     {#each infoCard.points as p}
                         <li>{p}</li>
                     {/each}
                 </ul>
-                <p class="">
+                <hr class="border-gray-700" />
+                <p class="text-justify">
                     {infoCard.desc}
                 </p>
             </section>

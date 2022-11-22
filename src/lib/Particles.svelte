@@ -73,12 +73,11 @@
                     break;
             }
         }
-        p[0].color ='#e11d48';
         return p;
     }
 
     const tickParticle = (c: HTMLCanvasElement, p: Particle): void => {
-        const context = c.getContext("2d")!;
+        const context = c.getContext('2d')!;
         const newX = p.x + p.dx;
         const newY = p.y + p.dy;
         if (newX > c.width && p.dx > 0) {
@@ -117,8 +116,8 @@
         }
     }
 
-    var frameTime: number = 0;
-    var frameRate: number = 0;
+    let frameTime: number = 0;
+    let frameRate: number = 0;
 
     onMount(() => {
         const canvas: HTMLCanvasElement = initCanvas();
@@ -136,7 +135,7 @@
                 frameTime = timeElapsed;
                 frameRate = 1000 / frameTime;
                 timeOfLastFrame = now - (timeElapsed % 1000 / targetFrameRate);
-                canvas.getContext("2d")!.clearRect(0, 0, canvas.width, canvas.height);
+                canvas.getContext('2d')!.clearRect(0, 0, canvas.width, canvas.height);
                 ps.map((p) => tickParticle(canvas, p));
             }
         }
@@ -144,15 +143,4 @@
     });
 </script>
 
-<canvas class="w-full absolute"/>
-<!-- <div class="flex justify-between px-4 absolute bottom-0 w-full h-12 font-consolas bg-gradient-to-t from-neutral-900">
-    <span class="text-zinc-700">
-        Frame Time: {frameTime.toFixed(3)}ms | Frame Rate: {frameRate.toFixed(3)}
-    </span>
-    <a
-        class="text-neutral-500"
-        target="_blank"
-        href="https://github.com/ArcticStorm9/shakespeare-dev">
-        Particle Source &#62;
-    </a>
-</div> -->
+<canvas class="w-full absolute" />
