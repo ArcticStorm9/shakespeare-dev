@@ -2,8 +2,9 @@
     import Particles from '$lib/Particles.svelte';
 
     type InfoCard = {
-        img: string;
+        icon: string;
         title: string;
+        points: string[];
         desc: string;
     }
 
@@ -26,18 +27,36 @@
 
     const infoCards: InfoCard[] = [
         {
-            img: "https://www.codingem.com/wp-content/uploads/2021/10/juanjo-jaramillo-mZnx9429i94-unsplash-scaled.jpg",
-            title: "Cats",
+            icon: "fa-solid fa-user-graduate",
+            title: "Education",
+            points: [
+                "Utah Tech University Graduate",
+                "Bachelor in Computer Science",
+                "Associate in General Studies",
+                "Honor Roll Student",
+            ],
+            desc: "paragraph should go here"
+        },
+        {
+            icon: "fa-solid fa-code",
+            title: "Languages",
+            points: [
+                "point 1",
+                "point 2",
+                "point 3",
+                "point 4",
+            ],
             desc: "there is in fact a cat"
         },
         {
-            img: "https://www.codingem.com/wp-content/uploads/2021/10/juanjo-jaramillo-mZnx9429i94-unsplash-scaled.jpg",
-            title: "Cats",
-            desc: "there is in fact a cat"
-        },
-        {
-            img: "https://www.codingem.com/wp-content/uploads/2021/10/juanjo-jaramillo-mZnx9429i94-unsplash-scaled.jpg",
-            title: "Cats",
+            icon: "fa-solid fa-briefcase",
+            title: "Work",
+            points: [
+                "point 1",
+                "point 2",
+                "point 3",
+                "point 4",
+            ],
             desc: "there is in fact a cat"
         }
     ]
@@ -68,11 +87,21 @@
     />
 </div>
 <div class="mx-40">
-    <div class="grid grid-cols-3 justify-center gap-8 w-full h-full py-8">
+    <div class="grid grid-cols-3 items-center gap-8 w-full h-full py-8">
         {#each infoCards as infoCard}
-            <section class="w-full h-80 radial-hover text-center rounded-lg border-2 border-gray-800" on:mousemove={handleMouseMove}>
-                <h1>{infoCard.title}</h1>
-                <p>{infoCard.desc}</p>
+            <section class="grid p-8 gap-8 radial-hover text-center rounded-lg border-2 border-gray-800 hover:shadow-lg" on:mousemove={handleMouseMove}>
+                <i class={`${infoCard.icon} fa-4x`}></i>
+                <h1 class="font-bold">
+                    {infoCard.title}
+                </h1>
+                <ul class="text-left list-disc">
+                    {#each infoCard.points as p}
+                        <li>{p}</li>
+                    {/each}
+                </ul>
+                <p class="">
+                    {infoCard.desc}
+                </p>
             </section>
         {/each}
     </div>
