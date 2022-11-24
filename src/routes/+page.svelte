@@ -6,6 +6,7 @@
         title: string;
         points: string[];
         desc: string;
+        href: string;
     }
 
     type MouseMoveEvent = {
@@ -35,7 +36,8 @@
                 "Associate in General Studies",
                 "Honor Roll Student",
             ],
-            desc: "As a graduate from Utah Tech University, I have hands on experience building all sorts of apps. From simple Python games to C-written file systems, I've worked on dozens of projects during my time in school."
+            desc: "As a graduate from Utah Tech University, I have hands on experience building all sorts of apps. From simple Python games to C-written file systems, I've worked on dozens of projects during my time in school.",
+            href: "/about#education"
         },
         {
             icon: "fa-solid fa-code",
@@ -48,7 +50,8 @@
                 "Swift",
                 "Golang"
             ],
-            desc: ""
+            desc: "",
+            href: "/about#technologies"
         },
         {
             icon: "fa-solid fa-briefcase",
@@ -59,7 +62,8 @@
                 "point 3",
                 "point 4",
             ],
-            desc: "there is in fact a cat"
+            desc: "there is in fact a cat",
+            href: "/about#work"
         }
     ]
 </script>
@@ -88,10 +92,11 @@
         maxSpeed={2.5}
     />
 </div>
-<div class="mx-30">
-    <div class="flex flex-wrap justify-center gap-8 w-full h-full py-8 text-gray-100">
+<div class="px-30">
+    <div class="flex flex-wrap justify-center gap-6 w-full h-full py-4 text-gray-100">
         {#each infoCards as infoCard}
-            <section
+            <a
+                href={infoCard.href}
                 class="grid basis-80 p-8 gap-4 radial-hover text-center rounded-lg border-2 border-gray-800 hover:shadow-lg duration-300"
                 on:mousemove={handleMouseMove}
             >
@@ -109,7 +114,7 @@
                 <p class="text-justify">
                     {infoCard.desc}
                 </p>
-            </section>
+            </a>
         {/each}
     </div>
 </div>
