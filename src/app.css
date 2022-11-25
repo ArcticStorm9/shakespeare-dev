@@ -5,25 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.radial-hover {
-    position: relative;
+.nav-item {
+    @apply w-48 h-16 font-rubik text-xl xl:text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-500;
 }
-.radial-hover::before {
-    opacity: 0;
-    background: radial-gradient(
-        50rem circle at var(--mouse-x) var(--mouse-y),
-        rgba(255,255,255,0.04),
-        transparent 50%
-    );
-    border-radius: inherit;
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-.radial-hover:hover::before {
-    opacity: 1;
+
+.text-blue-gr {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-700;
 }

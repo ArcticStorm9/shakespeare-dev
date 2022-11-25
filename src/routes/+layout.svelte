@@ -2,26 +2,26 @@
     import "../app.css";
 </script>
 
-<nav class="flex justify-center w-full absolute top-0 text-xl font-semibold bg-gradient-to-b from-gray-900 text-white z-20">
+<nav class="flex justify-center w-full absolute top-0 text-xl font-semibold bg-gradient-to-b from-gray-900 text-gray-100 z-20">
     <a
         href="/"
-        class="w-48 h-16 font-rubik text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-600"
+        class="nav-item"
     >
         <span>
             Home
         </span>
     </a>
     <a
-        href="/blog"
-        class="w-48 h-16 font-rubik text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-600"
+        href="/projects"
+        class="nav-item"
     >
         <span>
-            Blog
+            Projects
         </span>
     </a>
     <a
         href="/contact"
-        class="w-48 h-16 font-rubik text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-600"
+        class="nav-item"
     >
         <span>
             Contact
@@ -29,13 +29,13 @@
     </a>
     <a
         href="/about"
-        class="w-48 h-16 font-rubik text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-600"
+        class="nav-item"
     >
         <span>
             About
         </span>
     </a>
 </nav>
-<div class="w-full bg-gray-900 text-white font-rubik">
+<div class="w-full bg-gray-900 text-gray-100 font-rubik">
 <slot />
 </div>
