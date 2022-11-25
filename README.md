@@ -1,3 +1,23 @@
+# shakespeare-dev
+
+## Branch naming convention
+
+Branch names should follow this convention:
+
+```
+<type of branch>/name-of-branch
+```
+
+Type of branch may be one of the following:
+- `page`
+    - branch contains an entirely new page
+- `feature`
+    - branch contains a new feature
+- `fix`
+    - branch contains a non-vital fix (i.e. styling, clipping, etc.)
+- `bug`
+    - branch contains a vital fix (i.e. feature or page not working)
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
