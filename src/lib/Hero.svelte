@@ -37,8 +37,8 @@
         for the modern era
     </h2>
     <Particles
-        width={'full'} 
-        height={560}
+        width={'full'}
+        height={'full'}
         numOfParticles={50}
         shapeOfParticles={'circle'}
         colors={['#4b5563', '#374151', '#1f2937']}

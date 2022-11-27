@@ -42,12 +42,12 @@
         const canvas = document.querySelector('canvas')!;
         const resizeCanvas = (): void => {
             if (width == 'full') {
-                canvas.width = window.innerWidth;
+                canvas.width = canvas.parentElement!.clientWidth;
             } else {
                 canvas.width = width;
             }
             if (height == 'full') {
-                canvas.height = window.innerHeight;
+                canvas.height = canvas.parentElement!.clientHeight;
             } else {
                 canvas.height = height;
             }
