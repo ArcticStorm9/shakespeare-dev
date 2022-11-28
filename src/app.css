@@ -5,10 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav-item {
-    @apply w-48 h-16 font-rubik text-xl xl:text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-500;
-}
-
-.text-blue-gr {
+.text-gradient {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-700;
 }

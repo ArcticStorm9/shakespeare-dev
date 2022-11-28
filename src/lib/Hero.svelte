@@ -20,10 +20,10 @@
     });
 </script>
 
-<div class="grid gap-5 h-[28.25rem] md:h-[35rem] relative justify-center content-center cursor-default">
+<header class="grid gap-5 h-[28.25rem] md:h-[35rem] relative justify-center content-center cursor-default">
     <h1
         id="hero-header"
-        class="text-8xl xl:text-9xl text-center font-righteous font-semibold text-blue-gr z-10"
+        class="text-8xl xl:text-9xl text-center font-righteous font-semibold text-gradient z-10"
     >
         Ian Shakespeare
     </h1>
@@ -31,7 +31,7 @@
         id="hero-subheader"
         class="text-3xl md:text-5xl font-semibold text-center z-10"
     >
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-500">
+        <span class="text-gradient">
             Development
         </span>
         for the modern era
@@ -46,4 +46,4 @@
         maxRadius={50}
         maxSpeed={2.5}
     />
-</div>
+</header>

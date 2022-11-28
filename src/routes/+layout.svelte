@@ -5,35 +5,27 @@
 <nav class="flex justify-center w-full absolute top-0 text-xl font-semibold bg-gradient-to-b from-gray-900 text-gray-100 z-20">
     <a
         href="/"
-        class="nav-item"
+        class="w-48 h-16 font-rubik text-xl xl:text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-500"
     >
-        <span>
-            Home
-        </span>
+        Home
     </a>
     <a
         href="/projects"
-        class="nav-item"
+        class="w-48 h-16 font-rubik text-xl xl:text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-500"
     >
-        <span>
-            Projects
-        </span>
+        Projects
     </a>
     <a
         href="/contact"
-        class="nav-item"
+        class="w-48 h-16 font-rubik text-xl xl:text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-500"
     >
-        <span>
-            Contact
-        </span>
+        Contact
     </a>
     <a
         href="/about"
-        class="nav-item"
+        class="w-48 h-16 font-rubik text-xl xl:text-2xl grid justify-center content-center hover:bg-gradient-to-b hover:from-gray-800 hover:font-bold hover:text-rose-500"
     >
-        <span>
-            About
-        </span>
+        About
     </a>
 </nav>
 <div class="w-full bg-gray-900 text-gray-100 font-rubik">
