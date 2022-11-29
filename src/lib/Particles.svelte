@@ -59,7 +59,6 @@
 
     const initParticles = (n: number, c: HTMLCanvasElement, s: string): Particle[] => {
         let p: Particle[] = [];
-        const r = 50;
         for (let i = 0; i < n; i++) {
             switch (s) {
                 case 'circle':
@@ -69,7 +68,7 @@
                     p.push(generateParticle(Shape.Circle, c, colors, minRadius, maxRadius, maxSpeed));
                     break;
                 case 'hexagon':
-                    p.push(generateParticle(Shape.Circle, c, colors, minRadius, maxRadius, maxSpeed));
+                    p.push(generateParticle(Shape.Hexagon, c, colors, minRadius, maxRadius, maxSpeed));
                     break;
             }
         }
