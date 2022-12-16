@@ -28,7 +28,7 @@
     .radial-hover {
         position: relative;
     }
-    .radial-hover::before {
+    .radial-hover::after {
         opacity: 0;
         background: radial-gradient(
             50rem circle at var(--mouse-x) var(--mouse-y),
@@ -42,9 +42,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 2;
     }
-    .radial-hover:hover::before {
+    .radial-hover:hover::after {
         opacity: 1;
     }
 </style>
