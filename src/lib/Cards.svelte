@@ -1,5 +1,6 @@
 <script lang="ts">
     import RadialHover from "./RadialHover.svelte";
+    import { slide } from 'svelte/transition'
 
     type InfoCard = {
         id: number;
@@ -9,7 +10,7 @@
         desc: string;
     };
 
-    let selectedCard: number = -1;
+    let selectedCard: number | null = null;
 
     const infoCards: InfoCard[] = [
         {
@@ -75,27 +76,26 @@
     ];
 </script>
 
-<div class="grid justify-center md:grid-cols-[auto_auto] gap-6 w-full h-full py-4 md:text-gray-400">
+<div class="grid justify-center md:grid-cols-[auto_auto] gap-6 w-full h-full py-4 md:text-gray-400 relative">
     {#each infoCards as infoCard}
-        {#if selectedCard == -1 || selectedCard == infoCard.id}
-            <RadialHover containerStyles="w-72 xl:basis-80 shadow-lg duration-300 hover:text-gray-100">
-                <div
-                    class="grid p-8 gap-4 radial-hover text-center text-sm xl:text-md rounded-lg border-2 border-gray-800 z-10 relative"
-                    on:click={() => selectedCard = infoCard.id}
-                >
-                    <div class="grid gap-3">
-                        <i class={`${infoCard.icon} fa-4x text-rose-500 h-16`} />
-                        <h1 class="font-bold text-2xl">
-                            {infoCard.title}
-                        </h1>
-                    </div>
-                    {#if selectedCard == infoCard.id}
-                        <div class="absolute w-full h-full bg-white">
-                            {infoCard.desc}
-                        </div>
-                    {/if}
+        <RadialHover containerStyles={`${selectedCard == infoCard.id ? 'w-72' : 'w-72'} xl:basis-80 shadow-lg duration-300 hover:text-gray-100`}>
+            <div
+                class="grid p-8 gap-4 radial-hover text-center text-sm xl:text-md rounded-lg border-2 border-gray-800 z-10"
+                on:click={() => selectedCard = infoCard.id}
+            >
+                <div class="grid gap-3">
+                    <i class={`${infoCard.icon} fa-4x text-rose-500 h-16`} />
+                    <h1 class="font-bold text-2xl">
+                        {infoCard.title}
+                    </h1>
                 </div>
-            </RadialHover>
-        {/if}
+                {#if selectedCard == infoCard.id}
+                    <div class="absolute w-full h-full bg-purple-400" transition:slide>
+                        <button on:click={(e) => {e.stopPropagation(); selectedCard = null}}>Close</button>
+                        {infoCard.desc}
+                    </div>
+                {/if}
+            </div>
+        </RadialHover>
     {/each}
 </div>
