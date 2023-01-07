@@ -2,7 +2,7 @@
     import Particles from "./Particles.svelte";
 </script>
 
-<div class="w-screen h-screen absolute inset-0 cursor-default">
+<div aria-hidden="true" class="w-screen h-screen fixed inset-0 cursor-default">
     <Particles
         width={'full'}
         height={'full'}

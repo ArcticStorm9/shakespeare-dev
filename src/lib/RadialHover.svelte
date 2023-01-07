@@ -1,5 +1,6 @@
 <script lang="ts">
-    export let containerStyles: string;
+    export let position: 'relative' | 'absolute' | 'fixed' = 'relative';
+    export let containerStyles: string = '';
 
     type MouseMoveEvent = {
         currentTarget: HTMLElement;
@@ -18,20 +19,17 @@
 </script>
 
 <div
-    class="radial-hover {containerStyles}"
+    class={`radial-hover ${position} ${containerStyles}`}
     on:mousemove={handleMouseMove}
 >
     <slot />
 </div>
 
 <style>
-    .radial-hover {
-        position: relative;
-    }
     .radial-hover::after {
         opacity: 0;
         background: radial-gradient(
-            50rem circle at var(--mouse-x) var(--mouse-y),
+            120rem circle at var(--mouse-x) var(--mouse-y),
             rgba(255,255,255,0.04),
             transparent 50%
         );
