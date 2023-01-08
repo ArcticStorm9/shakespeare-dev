@@ -1,12 +1,15 @@
-<script lang='ts'>
-    const data = {
-        title: 'Personal Projects',
-        description:
-            `The backbone of any engineer's portfolio is, well, the engine!
-            While I've never built an engine per se, I have made plenty of software.
-            Most of my projects are mobile and web apps, though there is the
-            occasional game or system.`,
-        items: [
+<section class='grid gap-8 relative z-10'>
+    <h1 class='text-3xl'>
+        Personal Projects
+    </h1>
+    <p>
+        The backbone of any engineer's portfolio is, well, the engine!
+        While I've never built an engine per se, I have made plenty of software.
+        Most of my projects are mobile and web apps, though there is the
+        occasional game or system.
+    </p>
+    <ul class='grid grid-cols-2 gap-x-4 gap-y-2'>
+        {#each [
             {
                 text: 'SvelteKit Planner/Todo App',
                 href: 'https://github.com/ArcticStorm9/myplanner'
@@ -27,35 +30,15 @@
                 text: 'Unity MOBA',
                 href: 'https://github.com/ArcticStorm9/MOBA'
             }
-        ],
-        cta: {
-            text: 'See full project list on GitHub >',
-            href: 'https://github.com/ArcticStorm9'
-        }
-    };
-</script>
-
-<div class='grid gap-8 relative z-10'>
-    <h3 class='text-3xl'>
-        {data.title}
-    </h3>
-    <p>
-        {data.description}
-    </p>
-    <ul class='grid grid-cols-2 gap-x-4 gap-y-2'>
-        {#each data.items as item}
-            {#if item.href}
-                <a href={item.href} target='_blank' class='flex gap-1 before:text-sky-500 before:content-["•"]'>
+        ] as item}
+            <li class='flex gap-1 before:text-sky-500 before:content-["•"]'>
+                <a href={item.href} target='_blank' class='underline'>
                     {item.text}
                 </a>
-            {:else}
-                <li class='flex gap-1 before:text-sky-500 before:content-["•"]'>
-                    {item.text}
-                </li>
-            {/if}
+            </li>
         {/each}
     </ul>
-    <a href={data.cta.href} class='justify-self-center'>
-        {data.cta.text}
+    <a href='https://github.com/ArcticStorm9' class='justify-self-center'>
+        See full project list on GitHub >
     </a>
-</div>
+</section>

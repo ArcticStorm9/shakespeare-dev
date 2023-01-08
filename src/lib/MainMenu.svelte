@@ -32,9 +32,17 @@
     }
 </script>
 
-<section id='menu' class='grid gap-4 w-min pl-16'>
-    <h1 class='relative z-20 text-4xl text-white opacity-30 font-righteous duration-300 cursor-pointer hover:opacity-100 hover:text-sky-500'>
-        Ian Shakespeare
+<section id='menu' class='grid gap-4 w-min pl-4 md:pl-16'>
+    <h1
+        on:click={() => alert('Contact me at\nEmail: ian@shakespeare.dev')}
+        class='group relative z-20 text-4xl text-white opacity-30 font-righteous duration-300 cursor-pointer hover:opacity-100 hover:text-sky-500'
+    >
+        <span class='hidden md:inline group-hover:hidden'>
+            Ian Shakespeare
+        </span>
+        <span class='inline md:hidden group-hover:inline'>
+            Contact Me
+        </span>
     </h1>
     <ul class='group grid gap-4 justify-start w-min relative z-20 text-gray-100'>
         {#each points as p, i}
@@ -44,7 +52,7 @@
                 on:click={() => focusPoint = i}
                 class={`h-16 duration-300 ease-in-out cursor-pointer group-hover:opacity-30 ${focusPoint == i ? 'text-gradient' : ''}`}
             >
-                <h2 class='text-6xl'>
+                <h2 class='text-5xl md:text-6xl'>
                     {p.title}
                 </h2>
                 {#if focusPoint == i}
@@ -52,8 +60,8 @@
                         transition:fly={{ x: 400, duration: 1000 }}
                         class='fixed z-50 flex items-center w-[calc(100%)] h-full right-0 top-0 text-gray-100 bg-gradient-to-r from-transparent to-black bg-opacity-70'
                     >
-                        <div on:click={(e) => { e.stopPropagation(); focusPoint = null }} class='w-1/2 h-full' />
-                        <RadialHover containerStyles='flex items-center w-1/2 h-full bg-gray-900 border-l-2 border-gray-800 p-8'>
+                        <button on:click={(e) => { e.stopPropagation(); focusPoint = null }} class='block w-1/5 h-full md:w-1/2' />
+                        <RadialHover containerStyles='flex lg:items-center w-4/5 h-full bg-gray-900 border-l-2 border-gray-800 p-8 overflow-auto md:w-1/2'>
                             <svelte:component this={p.component} />
                         </RadialHover>
                     </div>
