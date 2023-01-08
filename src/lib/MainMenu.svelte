@@ -1,79 +1,28 @@
 <script lang='ts'>
     import { fly } from 'svelte/transition';
-    import RadialHover from "./RadialHover.svelte";
+    import RadialHover from './RadialHover.svelte';
+    import Projects from './content/Projects.svelte';
+    import Experience from './content/Experience.svelte';
+    import Education from './content/Education.svelte';
+    import Technologies from './content/Technologies.svelte';
 
     let focusPoint: number | null = null;
     const points = [
         {
             title: 'Projects',
-            altTitle: 'Personal Projects',
-            description:
-                `The backbone of any engineer's portfolio is, well, the engine!
-                While I've never built an engine per se, I have made plenty of software.
-                Most of my projects are mobile and web apps, though there is the
-                occasional game or system.`,
-            items: [
-                {
-                    text: 'SvelteKit Planner/Todo App',
-                    href: 'https://github.com/ArcticStorm9/myplanner'
-                },
-                {
-                    text: 'OpenGL Flappy Bird Clone',
-                    href: 'https://github.com/ArcticStorm9/flappy-bird-glut'
-                },
-                {
-                    text: 'Django Predecessor Tool',
-                    href: 'https://github.com/ArcticStorm9/django-project'
-                },
-                {
-                    text: 'C File System',
-                    href: 'https://github.com/ArcticStorm9/file-system'
-                },
-                {
-                    text: 'Unity MOBA',
-                    href: 'https://github.com/ArcticStorm9/MOBA'
-                }
-            ],
-            cta: {
-                text: 'See full project list on GitHub >',
-                href: 'https://github.com/ArcticStorm9'
-            }
+            component: Projects
         },
         {
             title: 'Experience',
-            altTitle: 'Work Experience',
-            description: 'Test2',
-            items: [
-
-            ],
-            cta: {
-                text: '',
-                href: ''
-            }
+            component: Experience
         },
         {
             title: 'Education',
-            altTitle: 'Academic Achievements',
-            description: 'Test3',
-            items: [
-
-            ],
-            cta: {
-                text: '',
-                href: ''
-            }
+            component: Education
         },
         {
             title: 'Technologies',
-            altTitle: 'Known Technologies',
-            description: 'Test4',
-            items: [
-
-            ],
-            cta: {
-                text: '',
-                href: ''
-            }
+            component: Technologies
         }
     ];
     
@@ -101,28 +50,11 @@
                 {#if focusPoint == i}
                     <div
                         transition:fly={{ x: 400, duration: 1000 }}
-                        class='fixed flex items-center w-[calc(100%)] h-full right-0 top-0 text-gray-100 bg-gradient-to-r from-transparent to-black bg-opacity-70'
+                        class='fixed z-50 flex items-center w-[calc(100%)] h-full right-0 top-0 text-gray-100 bg-gradient-to-r from-transparent to-black bg-opacity-70'
                     >
                         <div on:click={(e) => { e.stopPropagation(); focusPoint = null }} class='w-1/2 h-full' />
                         <RadialHover containerStyles='flex items-center w-1/2 h-full bg-gray-900 border-l-2 border-gray-800 p-8'>
-                            <div class='grid gap-8 relative z-10'>
-                                <h3 class='text-3xl'>
-                                    {p.altTitle}
-                                </h3>
-                                <p>
-                                    {p.description}
-                                </p>
-                                <ul class='grid grid-cols-2 gap-x-4 gap-y-2'>
-                                    {#each p.items as item}
-                                        <a href={item.href} target='_blank' class='flex gap-1 before:text-sky-500 before:content-["•"]'>
-                                            {item.text}
-                                        </a>
-                                    {/each}
-                                </ul>
-                                <a href={p.cta.href} class='justify-self-center'>
-                                    {p.cta.text}
-                                </a>
-                            </div>
+                            <svelte:component this={p.component} />
                         </RadialHover>
                     </div>
                 {/if}
