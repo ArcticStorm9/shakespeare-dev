@@ -1,5 +1,6 @@
 import adapter from 'svelte-adapter-github';
 import preprocess from 'svelte-preprocess';
+import { build } from 'vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,7 +13,13 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: null,
+			precompress: false,
+			strict: true
+		}),
 		paths: {
 			base: '/shakespeare-dev'
 		},
