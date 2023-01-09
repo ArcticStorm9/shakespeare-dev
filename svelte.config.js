@@ -1,6 +1,7 @@
-import adapter from 'svelte-adapter-github';
+import adapter from 'svelte-adapter-static';
 import preprocess from 'svelte-preprocess';
-import { build } from 'vite';
+
+const dev = process.argv.includes('dev');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,7 +22,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: '/shakespeare-dev'
+			base: dev ? '' : '/shakespeare-dev'
 		},
 		appDir: 'internal',
 	}
