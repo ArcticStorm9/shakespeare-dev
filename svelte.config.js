@@ -21,9 +21,6 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
-		paths: {
-			base: dev ? '' : '/shakespeare-dev'
-		},
 		appDir: 'internal',
 	}
 };
