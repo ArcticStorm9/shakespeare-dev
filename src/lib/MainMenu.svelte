@@ -33,17 +33,17 @@
 </script>
 
 <section id='menu' class='grid gap-4 w-min pl-4 md:pl-16'>
-    <h1
-        on:click={() => alert('Contact me at\nEmail: ian@shakespeare.dev')}
+    <a
+        href='mailto:ian@shakespeare.dev'
         class='group relative z-20 text-4xl text-white opacity-30 font-righteous duration-300 cursor-pointer hover:opacity-100 hover:text-sky-500'
     >
         <span class='hidden md:inline group-hover:hidden'>
             Ian Shakespeare
         </span>
         <span class='inline md:hidden group-hover:inline'>
-            Contact Me
+            ian@shakespeare.dev
         </span>
-    </h1>
+    </a>
     <ul class='group grid gap-4 justify-start w-min relative z-20 text-gray-100'>
         {#each points as p, i}
             <li
