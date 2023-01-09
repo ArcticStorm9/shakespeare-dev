@@ -11,6 +11,10 @@
     <ul class='grid grid-cols-2 gap-x-4 gap-y-2'>
         {#each [
             {
+                text: 'SvelteKit Portfolio',
+                href: 'https://github.com/ArcticStorm9/shakespeare-dev'
+            },
+            {
                 text: 'SvelteKit Planner/Todo App',
                 href: 'https://github.com/ArcticStorm9/myplanner'
             },
