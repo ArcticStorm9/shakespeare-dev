@@ -1,4 +1,4 @@
-import adapter from 'svelte-adapter-static';
+import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 
 const dev = process.argv.includes('dev');
