@@ -3,7 +3,7 @@
         Education and Recognitions
     </h1>
     <p>
-        I began my software development journey as a teenager at Utah Tech.
+        I began my software development journey as a teenager at Dixie State.
         Since then, I have received diplomas, academic recognitions, and
         extracurricular awards. To me, involvement with my University and community
         is critical to my development as an individual.

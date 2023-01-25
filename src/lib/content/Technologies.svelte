@@ -10,7 +10,7 @@
     </p>
     <ul class='grid gap-2 md:grid-cols-3'>
         {#each ['C/C++', 'TypeScript', 'Javascript',
-                'React/NextJS', 'Svelte/SvelteKit', 'Python',
+                'React/NextJS', 'Svelte/SvelteKit',
                 'Python', 'Django', 'Go',
                 'C#', 'Unity', 'Unreal'] as t}
             <li class='flex gap-1 before:text-sky-500 before:content-["•"]'>
