@@ -1,58 +1,7 @@
-# shakespeare-dev
+# Shakespeare Dev
 
-## Branch naming convention
+![Screenshot of Shakespeare Dev](screenshot.png)
 
-Branch names should follow this convention:
+The personal directory and resume for Ian Shakespeare. The site can be found [here](https://shakespeare.dev). On shakespeare.dev you can find projects, experience, education, and technology information for Ian Shakespeare. Any questions, bugs, and business inquiries can be directed to [this email](mailto:ian@shakespeare.dev).
 
-```
-<type of branch>/name-of-branch
-```
-
-Type of branch may be one of the following:
-- `page`
-    - branch contains an entirely new page
-- `feature`
-    - branch contains a new feature
-- `fix`
-    - branch contains a non-vital fix (i.e. styling, clipping, etc.)
-- `bug`
-    - branch contains a vital fix (i.e. feature or page not working)
-
-# create-svelte
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Shakespeare Dev is built with SvelteKit and Tailwind. Particles are a custom drawn canvas component, written in vanilla TypeScript. The site is live and deployed on GitHub Pages.
